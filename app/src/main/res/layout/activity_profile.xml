@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@color/purple_200"
+
+        />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgview_profile"
+
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="159dp"
+
+
+        />
+    <TextView
+        android:id="@+id/nom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="le nom "
+        android:textColor="#000000"
+        android:layout_below="@+id/imgview_profile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"/>
+    <LinearLayout
+        android:id="@+id/l_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nom"
+        android:layout_marginTop="63dp"
+        android:orientation="horizontal">
+
+
+        <ImageView
+
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_below="@+id/nom"
+            android:src="@drawable/baseline_person_24"
+            android:layout_marginLeft="70dp"
+
+            >
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/nom1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="name"
+            android:textSize="18sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/l_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/l_layout1"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+
+    <ImageView
+
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_below="@+id/nom"
+        android:src="@drawable/baseline_local_phone_24"
+        android:layout_marginLeft="70dp"
+
+        >
+
+
+    </ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="your phone"
+            android:textSize="18sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/l_layout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/l_layout2"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+
+        <ImageView
+
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_below="@+id/nom"
+            android:src="@drawable/baseline_email_24"
+            android:layout_marginLeft="70dp"
+
+            >
+
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="your email"
+            android:textSize="18sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

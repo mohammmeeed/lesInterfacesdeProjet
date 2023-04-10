@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapsActivity" />
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/localisation"
+        android:elevation="5dp"
+        android:queryHint="search"
+        android:iconifiedByDefault="false"
+        android:background="#ffffff"
+
+        >
+
+    </SearchView>
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottombar"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/bottombar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:elevation="10dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        tools:targetApi="lollipop"
+
+        >
+        <LinearLayout
+            android:id="@+id/layoutticket"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            >
+            <ImageView
+                android:id="@+id/iconticket"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_map_24"
+                android:adjustViewBounds="true"
+
+                >
+
+            </ImageView>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layouthome"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:gravity="center"
+            android:layout_weight="1"
+
+            >
+            <ImageView
+                android:id="@+id/iconhome"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_home_24"
+                android:adjustViewBounds="true"
+
+                >
+
+            </ImageView>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layoutmenu"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:gravity="center"
+            android:layout_weight="1"
+
+            >
+            <ImageView
+                android:id="@+id/iconmenu"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_menu_24"
+                android:adjustViewBounds="true"
+
+                >
+
+            </ImageView>
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
+
+
