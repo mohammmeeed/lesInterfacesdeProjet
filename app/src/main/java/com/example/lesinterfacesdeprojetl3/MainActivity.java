@@ -23,5 +23,20 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intnt);
             }
         });
+        final LinearLayout infos = findViewById(R.id.l_layout4);
+        infos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,Infos.class);
+            }
+        });
+        final LinearLayout info = findViewById(R.id.l_layout4);
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent info = new Intent(MainActivity.this,Infos.class);
+                startActivity(info);
+            }
+        });
     }
 }

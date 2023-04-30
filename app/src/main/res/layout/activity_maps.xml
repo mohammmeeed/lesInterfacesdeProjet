@@ -15,18 +15,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MapsActivity" />
-    <SearchView
+    <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        >
+
+    <SearchView
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:id="@+id/localisation"
         android:elevation="5dp"
         android:queryHint="search"
         android:iconifiedByDefault="false"
-        android:background="#ffffff"
+
+        android:background="@drawable/searchbar"
 
         >
 
+
     </SearchView>
+</LinearLayout>
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentcontainer"
         android:layout_width="match_parent"
@@ -127,6 +138,7 @@
 
         </LinearLayout>
     </LinearLayout>
+
 
 </RelativeLayout>
 

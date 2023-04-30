@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Reserveeer"
+    >
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:orientation="vertical">
+     <TextView
+        android:id="@+id/nmprking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nmprking"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="66dp"
+        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            >
+        <TextView
+            android:id="@+id/wlya"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="wilaya"
+            android:textSize="20dp"
+            android:layout_marginTop="30dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="115dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="30dp"
+                ></TextView>
+
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="15dp"
+
+            >
+
+
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="places disponibles"
+                android:layout_marginTop="30dp"
+                android:textSize="20dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="163dp" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="00"
+    android:layout_marginTop="30dp"
+android:layout_marginLeft="50dp"></TextView>
+
+
+
+        </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginLeft="15dp"
+
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="horaire d'ouverture"
+        android:textSize="20dp"
+        android:layout_marginTop="30dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="163dp" />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="00"
+    android:layout_marginLeft="100dp"
+    android:layout_marginTop="30dp"
+
+    ></TextView>
+
+
+</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="15dp"
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="heure de ferneture"
+                android:textSize="20dp"
+                android:layout_marginTop="30dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="159dp"
+                tools:layout_editor_absoluteY="163dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="30dp"
+
+                ></TextView>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="15dp"
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="le prix / h"
+                android:textSize="20dp"
+                android:layout_marginTop="30dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="159dp"
+                tools:layout_editor_absoluteY="163dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="30dp"
+
+                ></TextView>
+
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="reserver un place"
+        android:layout_marginEnd="100dp"
+        android:layout_below="@+id/ll"
+        android:layout_marginTop="250dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/bleuuu"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="633dp"
+
+
+        >
+
+
+    </Button>
+</RelativeLayout>
