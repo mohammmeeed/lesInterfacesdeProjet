@@ -34,11 +34,7 @@ public class EntroScreen extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //check if opened before launch
-        if (restorePrefData()) {
-            Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(mainActivity);
-            finish();
-        }
+
 
         setContentView(R.layout.activity_entro_screen);
         //getSupportActionBar().hide();

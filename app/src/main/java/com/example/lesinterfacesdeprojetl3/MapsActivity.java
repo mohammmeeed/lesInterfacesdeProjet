@@ -15,8 +15,12 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.media.session.MediaSession;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -29,6 +33,12 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.lesinterfacesdeprojetl3.databinding.ActivityMapsBinding;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.GeoPoint;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -40,7 +50,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+    private FirebaseFirestore db;
 
+    private SearchView searchView;
+    private ListView listView;
+    private ArrayAdapter<String> adapter;
+    private List<City> cityList;
 
     public class LocationInfo {
         private double latitude;
@@ -109,13 +124,92 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(binding.getRoot());
 
 
-
+        db = FirebaseFirestore.getInstance();
 
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+
+
+        searchView = findViewById(R.id.localisation);
+        listView = findViewById(R.id.listView);
+        cityList = new ArrayList<>();
+
+        // Ajouter les villes avec leurs coordonnées géographiques
+        cityList.add(new City("Paris", 48.8566, 2.3522));
+
+        cityList.add(new City("Alger", 36.7538, 3.0588));
+        cityList.add(new City("Madrid", 40.4168, -3.7038));
+        cityList.add(new City("Adrar", 27.8743, -0.2856));
+        cityList.add(new City("Chlef", 36.1667, 1.3333));
+        cityList.add(new City("Laghouat", 33.8001, 2.8807));
+        cityList.add(new City("Oum El Bouaghi", 35.8722, 7.1135));
+        cityList.add(new City("Batna", 35.5559, 6.1736));
+        cityList.add(new City("Béjaïa", 36.7515, 5.0553));
+        cityList.add(new City("Biskra", 34.8501, 5.7280));
+        cityList.add(new City("Béchar", 31.6111, -2.2247));
+        cityList.add(new City("Blida", 36.4699, 2.8282));
+        cityList.add(new City("Bouira", 36.3803, 3.8961));
+        cityList.add(new City("Tamanrasset", 22.7850, 5.5228));
+        cityList.add(new City("Tébessa", 35.4042, 8.1243));
+        cityList.add(new City("Tlemcen", 34.8783, -1.3150));
+        cityList.add(new City("Tiaret", 35.3764, 1.3179));
+        cityList.add(new City("Tizi Ouzou", 36.7110, 4.0452));
+        cityList.add(new City("Alger", 36.7538, 3.0588));
+        cityList.add(new City("Djelfa", 34.6742, 3.2508));
+        cityList.add(new City("Jijel", 36.8028, 5.7534));
+        cityList.add(new City("Sétif", 36.1891, 5.4043));
+        cityList.add(new City("Saïda", 34.8408, 0.1457));
+        cityList.add(new City("Skikda", 36.8663, 6.9094));
+        cityList.add(new City("Sidi Bel Abbès", 35.1947, -0.6508));
+        cityList.add(new City("Annaba", 36.9028, 7.7642));
+        cityList.add(new City("Guelma", 36.4607, 7.4326));
+        cityList.add(new City("Constantine", 36.3650, 6.6147));
+        cityList.add(new City("Médéa", 36.2679, 2.7536));
+        cityList.add(new City("Mostaganem", 35.9374, 0.0892));
+        cityList.add(new City("M'Sila", 35.7050, 4.5417));
+        cityList.add(new City("Mascara", 35.3912, 0.1401));
+        cityList.add(new City("Ouargla", 31.9497, 5.3230));
+        cityList.add(new City("Oran", 35.6911, -0.6417));
+        cityList.add(new City("El Bayadh", 33.6936, 1.0138));
+        cityList.add(new City("Illizi", 26.4936, 8.4748));
+
+
+
+                adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, getCityNames());
+        listView.setAdapter(adapter);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                searchLocation(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                // Implémenter une recherche en temps réel ici si nécessaire
+                return false;
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         final LinearLayout layoutticket = findViewById(R.id.layoutticket);
         final LinearLayout layoutmenu = findViewById(R.id.layoutmenu);
@@ -143,25 +237,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        List<LocationInfo> locations = new ArrayList<>();
-        locations.add(new LocationInfo(35.638209, -0.589343, "centre comercial senia", "oran",12));
-        locations.add(new LocationInfo(35.700602, -0.647636, "parking saida", "oran",23));
-        locations.add(new LocationInfo(35.703801, -0.640537, "parking beliala", "oran",03));
-
-
-        for (LocationInfo location : locations) {
-           // BitmapDescriptor icon = BitmapDescriptorFactory.fromResource(R.drawable.pin3);w bah ndirha ndir icon(icon) thta
-            LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-            mMap.addMarker(new MarkerOptions()
-                    .position(latLng)
-                    .title(location.getName())
-                    .snippet(location.getWilaya()));
-
-
-
-            
-        }
-
+        db.collection("parkings")
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            // Récupère les données de la ville
+                            String nom = document.getString("Name");
+                            GeoPoint localisation = document.getGeoPoint("Localisation");
+                            if (localisation != null) {
+                                double lat = localisation.getLatitude();
+                                double lng = localisation.getLongitude();
+                                // Ajoute un marqueur sur la carte pour chaque ville
+                                LatLng parkLatLng = new LatLng(lat, lng);
+                                mMap.addMarker(new MarkerOptions().position(parkLatLng).title(nom));
+                            }
+                        }
+                    } else {
+                        Log.d("MainActivity", "Erreur : ", task.getException());
+                    }
+                });
 
 
 
@@ -174,14 +269,31 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     Toast.makeText(MapsActivity.this, "votre localisation", Toast.LENGTH_SHORT).show();
                     return true;
                 } else {
-                    // Launch a new activity to display the location details
-                    Intent intent = new Intent(MapsActivity.this, Reserveeer.class);
-                    // Pass the necessary data as extras in the intent
-                    intent.putExtra("location_name", marker.getTitle());
+                    String nom = marker.getTitle();
+                    Query query = db.collection("parkings").whereEqualTo("Name", nom).limit(1);
+
+                    query.get().addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            QuerySnapshot snapshot = task.getResult();
+                            if (snapshot != null && !snapshot.isEmpty()) {
+                                DocumentSnapshot document = snapshot.getDocuments().get(0);
+                                Intent intent = new Intent(MapsActivity.this, Reserveeer.class);
+                                intent.putExtra("Name", document.getString("Name"));
+                                intent.putExtra("Wilaya", document.getString("Wilaya"));
+                                intent.putExtra("Nombre de places", document.getLong("Nombre de places"));
+
+                                intent.putExtra("Tarif", document.getLong("Tarif"));
+                                intent.putExtra("Hraire d'ouverture", document.getString("Hraire d'ouverture"));
+                                intent.putExtra("Heure de ferneture", document.getString("Heure de ferneture"));
 
 
-                    startActivity(intent);
-                    return true;
+                                startActivity(intent);
+                            }
+                        } else {
+                            Log.d("MainActivity", "Erreur : ", task.getException());
+                        }
+                    });
+                    return false;
                 }
             }
         });
@@ -254,6 +366,55 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
 
     }
+
+
+
+
+
+
+    private void searchLocation(String locationName) {
+        for (City city : cityList) {
+            if (city.getName().equalsIgnoreCase(locationName)) {
+                LatLng cityLatLng = new LatLng(city.getLatitude(), city.getLongitude());
+
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cityLatLng, 12));
+                break;
+            }
+        }
+    }
+
+    private List<String> getCityNames() {
+        List<String> cityNames = new ArrayList<>();
+        for (City city : cityList) {
+            cityNames.add(city.getName());
+        }
+        return cityNames;
+    }
+
+    private static class City {
+        private String name;
+        private double latitude;
+        private double longitude;
+
+        public City(String name, double latitude, double longitude) {
+            this.name = name;
+            this.latitude = latitude;
+            this.longitude = longitude;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public double getLatitude() {
+            return latitude;
+        }
+
+        public double getLongitude() {
+            return longitude;
+        }
+    }
+
 
     private void asKLocationpermition() {
         Dexter.withActivity(this).withPermission(Manifest.permission.ACCESS_FINE_LOCATION).withListener(new PermissionListener() {

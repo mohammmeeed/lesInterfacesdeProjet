@@ -8,6 +8,7 @@
     android:background="@color/white">
 
 
+
     <TextView
         android:id="@+id/signinlogo"
         android:layout_width="wrap_content"
@@ -25,7 +26,7 @@
         app:layout_constraintVertical_bias="0.102" />
 
     <EditText
-        android:id="@+id/inputUser"
+        android:id="@+id/nameparking"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -54,15 +55,15 @@
         android:drawableLeft="@drawable/baseline_email_24"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Email de Parking"
+        android:hint="wilaya"
         android:inputType="textEmailAddress"
         android:paddingLeft="20dp"
         android:paddingTop="20dp"
         android:paddingRight="20dp"
         android:paddingBottom="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/inputUser"
-        app:layout_constraintStart_toStartOf="@+id/inputUser"
-        app:layout_constraintTop_toBottomOf="@+id/inputUser" />
+        app:layout_constraintEnd_toEndOf="@+id/nameparking"
+        app:layout_constraintStart_toStartOf="@+id/nameparking"
+        app:layout_constraintTop_toBottomOf="@+id/nameparking" />
 
     <EditText
         android:id="@+id/inputPhone"
@@ -70,16 +71,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/inpute_bg"
-        android:drawableLeft="@drawable/baseline_phone_24"
+
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Numéro de téléphone"
+        android:hint="nombre de places"
         android:inputType="number|phone"
         android:paddingLeft="20dp"
         android:paddingTop="20dp"
         android:paddingRight="20dp"
         android:paddingBottom="20dp"
-        android:text="+213"
+
         app:layout_constraintEnd_toEndOf="@+id/inputEmail"
         app:layout_constraintStart_toStartOf="@+id/inputEmail"
         app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
@@ -115,7 +116,7 @@
         android:drawableLeft="@drawable/baseline_add_location_alt_24"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Location de Parking"
+        android:hint="lintitude"
         android:inputType="textNoSuggestions"
         app:layout_constraintEnd_toEndOf="@+id/inputPhone"
         app:layout_constraintHorizontal_bias="1.0"

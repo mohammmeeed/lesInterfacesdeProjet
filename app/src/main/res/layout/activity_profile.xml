@@ -39,6 +39,7 @@
         android:textColor="@android:color/black"
         />
     <TextView
+        android:id="@+id/dcnct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" déconnecter"
@@ -118,7 +119,7 @@
             android:id="@+id/nom1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="name"
+
             android:textColor="@color/black"
             android:textSize="18sp"
             android:layout_marginLeft="20dp"
@@ -151,9 +152,10 @@
 
     </ImageView>
         <TextView
+            android:id="@+id/your_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="your phone"
+
             android:textSize="18sp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
@@ -184,9 +186,11 @@
         </ImageView>
 
         <TextView
+            android:id="@+id/your_email"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="your email"
+
             android:textSize="18sp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"/>

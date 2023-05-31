@@ -39,6 +39,7 @@
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="115dp" />
             <TextView
+                android:id="@+id/Wilaya"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00"
@@ -71,6 +72,7 @@
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="163dp" />
 <TextView
+    android:id="@+id/placedispo"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="00"
@@ -99,6 +101,7 @@ android:layout_marginLeft="50dp"></TextView>
         tools:layout_editor_absoluteY="163dp" />
 
 <TextView
+    android:id="@+id/hd"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="00"
@@ -128,6 +131,7 @@ android:layout_marginLeft="50dp"></TextView>
                 tools:layout_editor_absoluteY="163dp" />
 
             <TextView
+                android:id="@+id/hf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00"
@@ -149,7 +153,7 @@ android:layout_marginLeft="50dp"></TextView>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="le prix / h"
+                android:text="tarif/ h"
                 android:textSize="20dp"
                 android:layout_marginTop="30dp"
                 tools:ignore="MissingConstraints"
@@ -157,6 +161,7 @@ android:layout_marginLeft="50dp"></TextView>
                 tools:layout_editor_absoluteY="163dp" />
 
             <TextView
+                android:id="@+id/tarif"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00"
