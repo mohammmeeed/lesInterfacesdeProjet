@@ -24,6 +24,15 @@
         android:theme="@style/Theme.LesInterfacesDeProjetL3"
         tools:targetApi="31">
         <activity
+            android:name=".Newparking"
+            android:exported="false" />
+        <activity
+            android:name=".ReservationDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReservationListActivity"
+            android:exported="false" />
+        <activity
             android:name=".Welcom"
             android:exported="false" />
         <activity
@@ -81,7 +90,7 @@
         <activity
             android:name=".MapsActivity"
             android:exported="true"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
         <activity
             android:name=".profile"
             android:exported="true" />

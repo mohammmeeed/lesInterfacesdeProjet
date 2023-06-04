@@ -82,7 +82,7 @@ public class Welcom extends AppCompatActivity {
         data5.put( "Localisation", new GeoPoint(34.882072, -1.304849));
         data5.put("Hraire d'ouverture","08:00");
         data5.put("Heure de ferneture","20:30");
-        parkings.document("cite prerret").set(data5);
+        parkings.document(" Bab El Djiad").set(data5);
 
 
 

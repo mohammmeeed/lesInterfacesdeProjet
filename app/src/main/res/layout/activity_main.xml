@@ -8,7 +8,8 @@
 
     <LinearLayout
         android:id="@+id/l1"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
+        android:layout_marginLeft="50dp"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:gravity="center"
@@ -66,7 +67,8 @@ android:layout_centerHorizontal="true"
 
     <LinearLayout
         android:id="@+id/l_layout1"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
+        android:layout_marginLeft="50dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imgview_profile"
         android:layout_marginTop="63dp"
@@ -79,7 +81,7 @@ android:layout_centerHorizontal="true"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_below="@+id/nom"
-            android:src="@drawable/baseline_person_24"
+            android:src="@drawable/baseline_person_ayoub"
             android:layout_marginLeft="70dp"
 
             >
@@ -91,6 +93,7 @@ android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="profil"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"/>
@@ -99,7 +102,8 @@ android:layout_centerHorizontal="true"
 
     <LinearLayout
         android:id="@+id/l_layout2"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
+        android:layout_marginLeft="50dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/l_layout1"
         android:layout_marginTop="20dp"
@@ -124,17 +128,119 @@ android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="history"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
 />
     </LinearLayout>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     <LinearLayout
-        android:id="@+id/l_layout3"
-        android:layout_width="match_parent"
+        android:id="@+id/layout_addpark"
+        android:layout_width="300dp"
+        android:layout_marginLeft="50dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/l_layout2"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:background="@drawable/menu"
+        android:visibility="visible"
+        >
+
+
+        <ImageView
+
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_below="@+id/nom"
+            android:src="@drawable/baseline_add_location_alt_24"
+            android:layout_marginLeft="70dp"
+
+            >
+
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ajouter un parking"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/layout_infoparking"
+        android:layout_width="300dp"
+        android:layout_marginLeft="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_addpark"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:background="@drawable/menu"
+        android:visibility="visible"
+        >
+
+
+        <ImageView
+
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_below="@+id/nom"
+            android:src="@drawable/baseline_local_parking_24"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="70dp"
+
+            >
+
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="information de parking"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/l_layout3"
+        android:layout_width="300dp"
+        android:layout_marginLeft="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_infoparking"
         android:layout_marginTop="20dp"
         android:orientation="horizontal"
         android:background="@drawable/menu">
@@ -156,15 +262,36 @@ android:layout_centerHorizontal="true"
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="paramètres"
+            android:text="paramètre"
             android:textSize="18sp"
+            android:textColor="@color/white"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"/>
 
     </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <LinearLayout
         android:id="@+id/l_layout5"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
+        android:layout_marginLeft="50dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/l_layout3"
         android:layout_marginTop="20dp"
@@ -188,15 +315,17 @@ android:layout_centerHorizontal="true"
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="aider"
+            android:text="aide"
             android:textSize="18sp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
+            android:textColor="@color/white"
             />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/l_layout4"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
+        android:layout_marginLeft="50dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/l_layout3"
         android:layout_marginTop="250dp"
@@ -222,6 +351,7 @@ android:layout_centerHorizontal="true"
             android:layout_height="wrap_content"
             android:text="info"
             android:textSize="18sp"
+            android:textColor="@color/white"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"/>
 

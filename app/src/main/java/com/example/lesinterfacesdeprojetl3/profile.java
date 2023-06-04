@@ -15,6 +15,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class profile extends AppCompatActivity {
 
     private TextView textViewName;
@@ -30,6 +32,7 @@ public class profile extends AppCompatActivity {
         textViewName = findViewById(R.id.nom1);
         textViewEmail = findViewById(R.id.your_email);
         textViewPhone = findViewById(R.id.your_phone);
+        CircleImageView imgViewProfile = findViewById(R.id.imgview_profile);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid(); // Remplacez par l'ID réel de l'utilisateur
         db.collection("Users").document(userId).get()
@@ -38,6 +41,8 @@ public class profile extends AppCompatActivity {
                         DocumentSnapshot document = task.getResult();
                         if (document.exists()) {
                             // Récupérer les valeurs des champs nom, email et téléphone
+
+                            String userType = document.getString("usertype");
                             String nom = document.getString("name");
                             String email = document.getString("email");
                             String phone = document.getString("phone");
@@ -46,6 +51,16 @@ public class profile extends AppCompatActivity {
                             textViewName.setText(nom);
                             textViewEmail.setText(email);
                             textViewPhone.setText(phone);
+
+
+                            // Update the profile image based on user type
+                            if (userType != null && userType.equals("utilisateur")) {
+                                imgViewProfile.setImageResource(R.drawable.utilisateur);
+                            } else if (userType != null && userType.equals("Proprietaire")) {
+                                imgViewProfile.setImageResource(R.drawable.propreitaire);
+                            }
+
+
                         }
                     }
                 });

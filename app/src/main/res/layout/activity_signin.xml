@@ -31,7 +31,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/inpute_bg"
-        android:drawableLeft="@drawable/baseline_person_24"
+        android:drawableLeft="@drawable/baseline_person_sara"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Nom d'utilisateur"

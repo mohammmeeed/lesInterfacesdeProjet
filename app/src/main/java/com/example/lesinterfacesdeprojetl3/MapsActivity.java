@@ -214,6 +214,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         final LinearLayout layoutticket = findViewById(R.id.layoutticket);
         final LinearLayout layoutmenu = findViewById(R.id.layoutmenu);
 
+
+        layoutticket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intnte = new Intent(MapsActivity.this, ReservationListActivity.class);
+                startActivity(intnte);
+            }
+        });
+
         layoutmenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -242,13 +251,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot document : task.getResult()) {
-                            // Récupère les données de la ville
+                            // Récupère les données de parking
                             String nom = document.getString("Name");
                             GeoPoint localisation = document.getGeoPoint("Localisation");
                             if (localisation != null) {
                                 double lat = localisation.getLatitude();
                                 double lng = localisation.getLongitude();
-                                // Ajoute un marqueur sur la carte pour chaque ville
+                                // Ajoute un marqueur sur la carte pour chaque parking
                                 LatLng parkLatLng = new LatLng(lat, lng);
                                 mMap.addMarker(new MarkerOptions().position(parkLatLng).title(nom));
                             }

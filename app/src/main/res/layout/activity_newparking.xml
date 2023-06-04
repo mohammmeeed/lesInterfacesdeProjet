@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Newparking">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addname"
+        android:hint="Nome de parking"
+>
+    </EditText>
+
+    <EditText
+        android:id="@+id/addwilaya"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Wilaya"
+        android:minHeight="48dp">
+
+    </EditText>
+
+
+
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:id="@+id/lignt"
+        android:hint="lign"
+        >
+
+    </EditText>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:id="@+id/longt"
+        android:hint="long"
+        >
+
+
+    </EditText>
+
+
+
+
+    <EditText
+        android:id="@+id/addplace"
+        android:hint="Nombre de place"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp">
+    </EditText>
+
+
+
+
+    <EditText
+        android:id="@+id/ouverture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:hint="ouverture">
+    </EditText>
+
+    <EditText
+        android:id="@+id/fermeture"
+        android:hint="Fermeture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp">
+
+
+    </EditText>
+
+
+
+
+
+    <EditText
+        android:id="@+id/addtarife"
+        android:hint="tarif"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp">
+
+
+    </EditText>
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ajouter"></Button>
+
+
+
+</LinearLayout>

@@ -62,7 +62,7 @@
         android:paddingRight="16dp" />
 
     <EditText
-        android:id="@+id/et_time"
+            android:id="@+id/et_time"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_date_time_title"

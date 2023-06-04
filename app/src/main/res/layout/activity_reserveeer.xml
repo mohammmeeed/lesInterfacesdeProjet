@@ -34,6 +34,7 @@
             android:layout_height="wrap_content"
             android:text="wilaya"
             android:textSize="20dp"
+            android:textColor="@color/black"
             android:layout_marginTop="30dp"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="16dp"
@@ -43,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00"
-                android:layout_marginLeft="100dp"
+                android:layout_marginLeft="240dp"
                 android:layout_marginTop="30dp"
                 ></TextView>
 
@@ -68,6 +69,8 @@
                 android:text="places disponibles"
                 android:layout_marginTop="30dp"
                 android:textSize="20dp"
+                android:textColor="@color/black"
+
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="163dp" />
@@ -77,7 +80,10 @@
     android:layout_height="wrap_content"
     android:text="00"
     android:layout_marginTop="30dp"
-android:layout_marginLeft="50dp"></TextView>
+    android:layout_marginLeft="130dp"
+
+    android:layout_marginRight="10dp"
+    ></TextView>
 
 
 
@@ -98,14 +104,15 @@ android:layout_marginLeft="50dp"></TextView>
         android:layout_marginTop="30dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="163dp" />
+        tools:layout_editor_absoluteY="163dp"
+        android:textColor="@color/black"/>
 
 <TextView
     android:id="@+id/hd"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="00"
-    android:layout_marginLeft="100dp"
+    android:layout_marginLeft="130dp"
     android:layout_marginTop="30dp"
 
     ></TextView>
@@ -128,14 +135,15 @@ android:layout_marginLeft="50dp"></TextView>
                 android:layout_marginTop="30dp"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="159dp"
-                tools:layout_editor_absoluteY="163dp" />
+                tools:layout_editor_absoluteY="163dp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/hf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00"
-                android:layout_marginLeft="100dp"
+                android:layout_marginLeft="130dp"
                 android:layout_marginTop="30dp"
 
                 ></TextView>
@@ -158,17 +166,25 @@ android:layout_marginLeft="50dp"></TextView>
                 android:layout_marginTop="30dp"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="159dp"
-                tools:layout_editor_absoluteY="163dp" />
+                tools:layout_editor_absoluteY="163dp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/tarif"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00"
-                android:layout_marginLeft="100dp"
+                android:layout_marginLeft="200dp"
                 android:layout_marginTop="30dp"
 
                 ></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DA"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="8dp"
+                android:textSize="17dp"></TextView>
 
 
         </LinearLayout>

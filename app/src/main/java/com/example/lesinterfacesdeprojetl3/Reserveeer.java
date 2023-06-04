@@ -56,6 +56,10 @@ nmbrplctxt.setText(String.valueOf(nmbrplc));
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Reserveeer.this,Resarvatioon.class);
+
+                i.putExtra("Name", name);
+
+
                 startActivity(i);
             }
         });
