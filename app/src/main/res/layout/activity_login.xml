@@ -97,7 +97,8 @@
         app:layout_constraintEnd_toEndOf="@+id/singbtn"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/singbtn"
-        app:layout_constraintTop_toBottomOf="@+id/singbtn">
+        app:layout_constraintTop_toBottomOf="@+id/singbtn"
+        android:background="@color/white">
 
         <TextView
             android:layout_width="wrap_content"

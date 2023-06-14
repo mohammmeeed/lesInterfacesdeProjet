@@ -66,6 +66,25 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+
+
+
+        final LinearLayout infoparking = findViewById(R.id.layout_infoparking);
+        infoparking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,ParkingListActivity.class));
+            }
+        });
+
+
+
+
+
+
+
+
         final LinearLayout addParkingLayout = findViewById(R.id.layout_addpark);
         addParkingLayout.setVisibility(View.GONE);
         db.collection("Users").document(userId).get()
@@ -82,8 +101,13 @@ public class MainActivity extends AppCompatActivity {
                             // Update the profile image based on user type
                             if (userType != null && userType.equals("utilisateur")) {
                                 addParkingLayout.setVisibility(View.GONE);
+                                infoparking.setVisibility(View.GONE);
+                                info.setVisibility(View.VISIBLE);
                             } else if (userType != null && userType.equals("Proprietaire")) {
                                 addParkingLayout.setVisibility(View.VISIBLE);
+                                infoparking.setVisibility(View.VISIBLE);
+                                info.setVisibility(View.VISIBLE);
+
 
                                 addParkingLayout.setOnClickListener(new View.OnClickListener() {
                                     @Override

@@ -33,6 +33,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.lesinterfacesdeprojetl3.databinding.ActivityMapsBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.GeoPoint;
@@ -56,7 +58,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private ListView listView;
     private ArrayAdapter<String> adapter;
     private List<City> cityList;
-
+    private FirebaseUser currentUser;
+    private FirebaseAuth mAuth;
     public class LocationInfo {
         private double latitude;
         private double longitude;
@@ -206,7 +209,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
-
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
 
 
 
@@ -218,16 +222,38 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         layoutticket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intnte = new Intent(MapsActivity.this, ReservationListActivity.class);
-                startActivity(intnte);
+
+                if (currentUser != null && currentUser.isAnonymous()){
+                    startActivity(new Intent(MapsActivity.this,Anonyme.class));
+                }else {
+
+
+                    Intent intnte = new Intent(MapsActivity.this, ReservationListActivity.class);
+                    startActivity(intnte);
+                }
             }
         });
 
         layoutmenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intnt = new Intent(MapsActivity.this, MainActivity.class);
-                startActivity(intnt);
+
+
+
+
+
+                if (currentUser != null && currentUser.isAnonymous()){
+                    startActivity(new Intent(MapsActivity.this,Anonyme.class));
+                }else {
+
+                    Intent intnt = new Intent(MapsActivity.this, MainActivity.class);
+                    startActivity(intnt);
+                }
+
+
+
+
+
             }
         });
 
@@ -386,7 +412,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             if (city.getName().equalsIgnoreCase(locationName)) {
                 LatLng cityLatLng = new LatLng(city.getLatitude(), city.getLongitude());
 
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cityLatLng, 12));
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(cityLatLng, 12));
                 break;
             }
         }

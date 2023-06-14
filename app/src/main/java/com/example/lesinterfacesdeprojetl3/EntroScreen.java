@@ -1,5 +1,6 @@
 package com.example.lesinterfacesdeprojetl3;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
@@ -12,8 +13,14 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,14 +30,18 @@ public class EntroScreen extends AppCompatActivity {
     introViewPagerAdapter intViewPagerAdapter;
     TabLayout tabLay;
     Button btnNxt;
+    Button anonym;
     int position = 0;
     Button btnPUser;
     Button btnAno;
     Animation btnAnim;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mAuth = FirebaseAuth.getInstance();
+
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //check if opened before launch
@@ -45,6 +56,7 @@ public class EntroScreen extends AppCompatActivity {
         btnPUser = findViewById(R.id.btnBeUser);
         btnAno = findViewById(R.id.btnAnonym);
         btnAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.btn_animation);
+        anonym = findViewById(R.id.btnAnonym);
 
 
         //fils list screen
@@ -76,6 +88,9 @@ public class EntroScreen extends AppCompatActivity {
 
 
         });
+
+
+
 
         // add changeListener
         tabLay.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -113,8 +128,7 @@ public class EntroScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //go to mainAct
-                Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(mainActivity);
+                signInAnonymously();
                 savePrefsData();
                 finish();
             }
@@ -145,5 +159,32 @@ public class EntroScreen extends AppCompatActivity {
         //setup Animation
         btnPUser.setAnimation(btnAnim);
         btnAno.setAnimation(btnAnim);
+    }
+
+
+    private void signInAnonymously() {
+        mAuth.signInAnonymously()
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            // Do any additional actions after signing in anonymously
+
+                            // For example, redirect the user to another activity
+                            Intent intent = new Intent(EntroScreen.this, MapsActivity.class);
+                            startActivity(intent);
+
+                        } else {
+                            // If sign in fails, display a message to the user
+                            Toast.makeText(EntroScreen.this, "Sign in with anonymous failed.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+
     }
 }

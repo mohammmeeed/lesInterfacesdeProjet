@@ -84,6 +84,40 @@ public class Welcom extends AppCompatActivity {
         data5.put("Heure de ferneture","20:30");
         parkings.document(" Bab El Djiad").set(data5);
 
+        Map<String, Object> data6 = new HashMap<>();
+        data6.put("Name"," tribunal said hamadine");
+        data6.put("Wilaya","alger");
+        data6.put("Nombre de places",19);
+        data6.put("Tarif",80);
+        data6.put( "Localisation", new GeoPoint(36.734032, 3.035500));
+        data6.put("Hraire d'ouverture","08:00");
+        data6.put("Heure de ferneture","18:30");
+        parkings.document("tribunal said hamadine").set(data6);
+
+        Map<String, Object> data7= new HashMap<>();
+        data7.put("Name"," parking said hamadine");
+        data7.put("Wilaya","alger");
+        data7.put("Nombre de places",25);
+        data7.put("Tarif",60);
+        data7.put( "Localisation", new GeoPoint(36.734528, 3.031757));
+        data7.put("Hraire d'ouverture","08:00");
+        data7.put("Heure de ferneture","18:30");
+        parkings.document("parking said hamadine").set(data7);
+
+
+        Map<String, Object> data8= new HashMap<>();
+        data8.put("Name"," PARKING EL MADANIA");
+        data8.put("Wilaya","alger");
+        data8.put("Nombre de places",71);
+        data8.put("Tarif",150);
+        data8.put( "Localisation", new GeoPoint(36.740506, 3.057419));
+        data8.put("Hraire d'ouverture","08:00");
+        data8.put("Heure de ferneture","20:45");
+        parkings.document("PARKING EL MADANIA").set(data8);
+
+
+
+
 
 
 

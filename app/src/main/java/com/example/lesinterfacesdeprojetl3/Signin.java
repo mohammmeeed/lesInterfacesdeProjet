@@ -75,11 +75,14 @@ public class Signin extends AppCompatActivity {
 
                 int selectedRadioButtonId = userTypeRadioGroup.getCheckedRadioButtonId();
                 if (selectedRadioButtonId == R.id.rb1) {
+                    checkCredentials();   // possiiiiblee tnglaa3
+
 
                     createNewUtilisateur( email, password,username, phone);
                 } else if (selectedRadioButtonId == R.id.rb2) {
-                    startActivity(new Intent(Signin.this, Login2.class));
+
                     createNewUtilisateuree(email,password,username,phone);
+                    checkCredentials(); // possiiiiblee tnglaa3
                 }
             }
         });

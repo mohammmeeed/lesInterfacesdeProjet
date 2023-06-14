@@ -44,8 +44,19 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:22.0.0'
     implementation 'com.google.firebase:firebase-firestore:24.6.0'
     implementation 'com.google.firebase:firebase-database:20.2.1'
+    implementation 'com.google.firebase:firebase-auth:xx.x.x'
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+
+    implementation 'com.braintreepayments:card-form:5.4.0'
+
+    implementation 'com.itextpdf:itextpdf:5.5.6'
+    implementation 'com.itextpdf:itext7-core:7.1.15'
+
+
+
 }

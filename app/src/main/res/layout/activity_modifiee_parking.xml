@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ModifieeParking"
+    android:background="@color/white"
+    android:layout_gravity="center">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/signinlogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:layout_marginBottom="40dp"
+            android:text="Informations Parking"
+            android:textColor="@color/bleuuu"
+            android:textColorHighlight="@color/blue2"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/nomParkingMod"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/nomParkingMod"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/inpute_bg"
+            android:drawableLeft="@drawable/baseline_local_parking_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Nom de parking"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/signinlogo"
+            app:layout_constraintStart_toStartOf="@+id/signinlogo"
+            app:layout_constraintTop_toBottomOf="@+id/signinlogo" />
+
+        <EditText
+            android:id="@+id/heurOvertureMod"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/inpute_bg"
+            android:drawableLeft="@drawable/baseline_access_time_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Heures d'ouverture "
+            android:inputType="time"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/nomParkingMod"
+            app:layout_constraintStart_toStartOf="@+id/nomParkingMod"
+            app:layout_constraintTop_toBottomOf="@+id/nomParkingMod" />
+
+        <EditText
+            android:id="@+id/heurFermitureMod"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/inpute_bg"
+            android:drawableLeft="@drawable/baseline_access_time_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Heure de fermeture"
+            android:inputType="time"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/heurOvertureMod"
+            app:layout_constraintStart_toStartOf="@+id/heurOvertureMod"
+            app:layout_constraintTop_toBottomOf="@+id/heurOvertureMod" />
+
+
+
+
+        <EditText
+            android:id="@+id/nbrPlaceMod"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/inpute_bg"
+            android:drawableLeft="@drawable/baseline_directions_car_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Nombre de place"
+            android:inputType="number"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/heurFermitureMod"
+            app:layout_constraintStart_toStartOf="@+id/heurFermitureMod"
+            app:layout_constraintTop_toBottomOf="@+id/heurFermitureMod" />
+
+        <EditText
+            android:id="@+id/tarifHeureMod"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/inpute_bg"
+            android:drawableLeft="@drawable/baseline_money_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Tarif/Heure"
+            android:inputType="numberDecimal"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/nbrPlaceMod"
+            app:layout_constraintStart_toStartOf="@+id/nbrPlaceMod"
+            app:layout_constraintTop_toBottomOf="@+id/nbrPlaceMod" />
+
+        <Button
+            android:id="@+id/btnConfirmationMod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/btn_bg"
+            android:text="Confirmation"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tarifHeureMod"
+            app:layout_constraintStart_toStartOf="@+id/tarifHeureMod"
+            app:layout_constraintTop_toBottomOf="@+id/tarifHeureMod" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

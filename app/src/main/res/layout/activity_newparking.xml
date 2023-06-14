@@ -1,106 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@color/white"
     tools:context=".Newparking">
 
-    <EditText
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/addname"
-        android:hint="Nome de parking"
->
-    </EditText>
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
-    <EditText
-        android:id="@+id/addwilaya"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Wilaya"
-        android:minHeight="48dp">
+        <TextView
+            android:id="@+id/signinlogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:layout_marginBottom="40dp"
+            android:text="Informations Parking"
+            android:textColor="@color/bleuuu"
+            android:textColorHighlight="@color/blue2"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/nomParking"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </EditText>
+        <EditText
+            android:id="@+id/nomParking"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/inpute_bg"
+            android:drawableLeft="@drawable/baseline_local_parking_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Nom de parking"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/autoCTextCase"
+            app:layout_constraintStart_toStartOf="@+id/autoCTextCase"
+            app:layout_constraintTop_toBottomOf="@+id/signinlogo" />
 
+        <EditText
+            android:id="@+id/heurOverture"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/inpute_bg"
+            android:drawableLeft="@drawable/baseline_access_time_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Heures d'ouverture "
+            android:inputType="time"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/autoCTextCase"
+            app:layout_constraintStart_toStartOf="@+id/autoCTextCase"
+            app:layout_constraintTop_toBottomOf="@+id/autoCTextCase" />
 
-
-
-
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:id="@+id/lignt"
-        android:hint="lign"
-        >
-
-    </EditText>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:id="@+id/longt"
-        android:hint="long"
-        >
-
-
-    </EditText>
-
-
-
-
-    <EditText
-        android:id="@+id/addplace"
-        android:hint="Nombre de place"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp">
-    </EditText>
-
-
-
-
-    <EditText
-        android:id="@+id/ouverture"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:hint="ouverture">
-    </EditText>
-
-    <EditText
-        android:id="@+id/fermeture"
-        android:hint="Fermeture"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp">
-
-
-    </EditText>
-
-
-
-
-
-    <EditText
-        android:id="@+id/addtarife"
-        android:hint="tarif"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp">
+        <EditText
+            android:id="@+id/heurFermiture"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/inpute_bg"
+            android:drawableLeft="@drawable/baseline_access_time_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Heure de fermeture"
+            android:inputType="time"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/heurOverture"
+            app:layout_constraintStart_toStartOf="@+id/heurOverture"
+            app:layout_constraintTop_toBottomOf="@+id/heurOverture" />
 
 
-    </EditText>
-    <Button
-        android:id="@+id/add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ajouter"></Button>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/autoCTextCase"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="345dp"
+            android:layout_height="67dp"
+            android:layout_margin="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/inpute_bg"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/signinlogo"
+            app:layout_constraintStart_toStartOf="@+id/signinlogo"
+            app:layout_constraintTop_toBottomOf="@+id/nomParking">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="60dp"
+                android:layout_height="46dp"
+                android:layout_gravity="right"
+                android:layout_weight="1"
+                />
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCText"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_gravity="left"
+                android:background="@color/white"
+                android:drawableRight="@android:drawable/arrow_down_float"
+                android:gravity="center|left"
+                android:inputType="none"
+                android:text="Wilaya" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
+        <EditText
+            android:id="@+id/nbrPlace"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/inpute_bg"
+            android:drawableLeft="@drawable/baseline_directions_car_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Nombre de place"
+            android:inputType="number"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/heurFermiture"
+            app:layout_constraintStart_toStartOf="@+id/heurFermiture"
+            app:layout_constraintTop_toBottomOf="@+id/heurFermiture" />
 
-</LinearLayout>
+        <EditText
+            android:id="@+id/tarifHeure"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/inpute_bg"
+            android:drawableLeft="@drawable/baseline_money_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Tarif/Heure"
+            android:inputType="numberDecimal"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/nbrPlace"
+            app:layout_constraintStart_toStartOf="@+id/nbrPlace"
+            app:layout_constraintTop_toBottomOf="@+id/nbrPlace" />
+
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="32dp"
+            android:text="Ajouter la location de votre parking"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tarifHeure"
+            app:layout_constraintStart_toStartOf="@+id/tarifHeure"
+            app:layout_constraintTop_toBottomOf="@+id/tarifHeure" />
+
+        <EditText
+            android:id="@+id/longitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/inpute_bg"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="longitude"
+            android:inputType="numberDecimal|numberSigned"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/latitude"
+            app:layout_constraintStart_toStartOf="@+id/latitude"
+            app:layout_constraintTop_toBottomOf="@+id/latitude" />
+
+        <EditText
+            android:id="@+id/latitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/inpute_bg"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="latitude"
+            android:inputType="numberDecimal|numberSigned"            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/tvLocation"
+            app:layout_constraintStart_toStartOf="@+id/tvLocation"
+            app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
+
+        <Button
+            android:id="@+id/btnConfirmation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/btn_bg"
+            android:text="Confirmation"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/longitude"
+            app:layout_constraintStart_toStartOf="@+id/longitude"
+            app:layout_constraintTop_toBottomOf="@+id/longitude" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+

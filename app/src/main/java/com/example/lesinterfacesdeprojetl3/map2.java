@@ -2,6 +2,7 @@ package com.example.lesinterfacesdeprojetl3;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -28,6 +29,7 @@ public class map2 extends FragmentActivity implements OnMapReadyCallback {
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
     }
 
     /**
@@ -42,10 +44,14 @@ public class map2 extends FragmentActivity implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        Intent lc = getIntent();
+        double lat = lc.getDoubleExtra("lat",0.0);
+        double lng = lc.getDoubleExtra("lng",0.0);
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng park = new LatLng(lat, lng);
+        mMap.addMarker(new MarkerOptions().position(park));
+
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(park, 15));
     }
 }

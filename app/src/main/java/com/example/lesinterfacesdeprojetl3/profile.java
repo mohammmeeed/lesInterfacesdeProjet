@@ -19,7 +19,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class profile extends AppCompatActivity {
 
-    private TextView textViewName;
+    private TextView textViewName, usertyptxt;
     private TextView textViewEmail;
     private TextView textViewPhone;
     private TextView  dcnct;
@@ -28,10 +28,11 @@ public class profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        dcnct = findViewById(R.id.dcnct);
-        textViewName = findViewById(R.id.nom1);
-        textViewEmail = findViewById(R.id.your_email);
-        textViewPhone = findViewById(R.id.your_phone);
+        usertyptxt = findViewById(R.id.userType);
+        dcnct = findViewById(R.id.deconnecte);
+        textViewName = findViewById(R.id.userName);
+        textViewEmail = findViewById(R.id.userEmail);
+        textViewPhone = findViewById(R.id.userPhone);
         CircleImageView imgViewProfile = findViewById(R.id.imgview_profile);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid(); // Remplacez par l'ID réel de l'utilisateur
@@ -51,6 +52,7 @@ public class profile extends AppCompatActivity {
                             textViewName.setText(nom);
                             textViewEmail.setText(email);
                             textViewPhone.setText(phone);
+                            usertyptxt.setText(userType);
 
 
                             // Update the profile image based on user type
@@ -86,6 +88,15 @@ dcnct.setOnClickListener(new View.OnClickListener() {
             }
         });
 
+        Button mdf = findViewById(R.id.btnModif);
+        mdf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(profile.this,Modefieeprofile.class);
+                startActivity(intent);
+
+            }
+        });
 
     }
 }
