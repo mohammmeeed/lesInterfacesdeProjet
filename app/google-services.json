@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "971595201915",
+    "project_id": "les-interfaces-de-projet-l3",
+    "storage_bucket": "les-interfaces-de-projet-l3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971595201915:android:949ce1d1ac6369d64b11de",
+        "android_client_info": {
+          "package_name": "com.example.lesinterfacesdeprojetl3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "971595201915-p6apirau87jo1e7u87a4s7nd936rg101.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmiedY13_K1nIx1xV08-u01_7ckoGsQmM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "971595201915-p6apirau87jo1e7u87a4s7nd936rg101.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
