@@ -156,7 +156,7 @@ public class ModifieeParking extends AppCompatActivity {
                 })
                 .addOnFailureListener(e -> {
                     // Update failed
-                    Toast.makeText(ModifieeParking.this, "Failed to update parking information", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ModifieeParking.this, "remplire tout les champs ou vous ne pouvesz pas changer le nom de parking ", Toast.LENGTH_SHORT).show();
                 });
     }
     private void afficherNotification(Context context , String pakingname) {

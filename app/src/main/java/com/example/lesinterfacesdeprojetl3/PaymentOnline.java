@@ -38,7 +38,7 @@ public class PaymentOnline extends AppCompatActivity {
         String date = getIntent().getStringExtra("date");
         String time = getIntent().getStringExtra("time");
        long nmbrjour = getIntent().getLongExtra("nmbrjour",0);
-        long nmbrheur = getIntent().getLongExtra("nmbrjour",0);
+        long nmbrheur = getIntent().getLongExtra("nombreheurs",0);
 
 
 

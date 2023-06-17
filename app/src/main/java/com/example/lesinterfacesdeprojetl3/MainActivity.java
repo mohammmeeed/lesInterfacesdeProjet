@@ -1,6 +1,7 @@
 package com.example.lesinterfacesdeprojetl3;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        final LinearLayout profil ;
+        final ConstraintLayout profil ;
         //hi
         profil = findViewById(R.id.l_layout1);
         profil.setOnClickListener(new View.OnClickListener() {
@@ -42,14 +43,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intnt);
             }
         });
-        final LinearLayout infos = findViewById(R.id.l_layout4);
+        final ConstraintLayout infos = findViewById(R.id.l_layout4);
         infos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this,Infos.class);
             }
         });
-        final LinearLayout info = findViewById(R.id.l_layout4);
+        final ConstraintLayout info = findViewById(R.id.l_layout4);
         info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(info);
             }
         });
-        final LinearLayout his = findViewById(R.id.l_layout2);
+        final ConstraintLayout his = findViewById(R.id.l_layout2);
         his.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        final LinearLayout infoparking = findViewById(R.id.layout_infoparking);
+        final ConstraintLayout infoparking = findViewById(R.id.layout_infoparking);
         infoparking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,10 +83,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        ConstraintLayout help = findViewById(R.id.l_layout5);
 
 
-
-        final LinearLayout addParkingLayout = findViewById(R.id.layout_addpark);
+        final ConstraintLayout addParkingLayout = findViewById(R.id.layout_addpark);
         addParkingLayout.setVisibility(View.GONE);
         db.collection("Users").document(userId).get()
                 .addOnCompleteListener(task -> {
@@ -103,10 +104,24 @@ public class MainActivity extends AppCompatActivity {
                                 addParkingLayout.setVisibility(View.GONE);
                                 infoparking.setVisibility(View.GONE);
                                 info.setVisibility(View.VISIBLE);
+                                help.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        startActivity(new Intent(MainActivity.this,Help.class));
+                                    }
+                                });
+
                             } else if (userType != null && userType.equals("Proprietaire")) {
                                 addParkingLayout.setVisibility(View.VISIBLE);
                                 infoparking.setVisibility(View.VISIBLE);
                                 info.setVisibility(View.VISIBLE);
+                                help.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        startActivity(new Intent(MainActivity.this,Infospropeitaire.class));
+                                    }
+                                });
+
 
 
                                 addParkingLayout.setOnClickListener(new View.OnClickListener() {
@@ -121,6 +136,9 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
+
+
+
 
 
     }

@@ -1,368 +1,290 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/white">
-
-    <LinearLayout
-        android:id="@+id/l1"
-        android:layout_width="350dp"
-        android:layout_marginLeft="0dp"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:background="@color/white">
-        <ImageView
-            android:id="@+id/back"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentLeft="true"
-
-            android:src="@drawable/baseline_arrow_back_24"
-            >
-
-        </ImageView>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Menu"
-            android:textSize="19dp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_marginRight="0dp"
-            android:layout_marginLeft="20dp"
-            android:textColor="@android:color/black"
-            />
+    android:background="@color/grey_10"
+    tools:context=".MainActivity">
 
 
-
-    </LinearLayout>
-
-
-    <View
-        android:id="@+id/v1"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/bleuuu"
-        android:layout_below="@+id/l1"
-        android:paddingRight="8dp"
-        android:paddingLeft="8dp"
-        android:layout_marginTop="1dp">
-
-    </View>
-
-<de.hdodenhof.circleimageview.CircleImageView
-    android:id="@+id/imgview_profile"
-
-    android:layout_width="120dp"
-    android:layout_height="120dp"
-    android:src="@mipmap/ic_launcher"
-android:layout_centerHorizontal="true"
-    android:layout_marginTop="60dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
-    />
-
-    <LinearLayout
-        android:id="@+id/l_layout1"
-        android:layout_width="300dp"
-        android:layout_marginLeft="50dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imgview_profile"
-        android:layout_marginTop="63dp"
-        android:orientation="horizontal"
-        android:background="@drawable/menu">
-
-
-        <ImageView
-
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_below="@+id/nom"
-            android:src="@drawable/baseline_person_ayoub"
-            android:layout_marginLeft="70dp"
-
-            >
-
-
-        </ImageView>
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="profil"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/l_layout2"
-        android:layout_width="300dp"
-        android:layout_marginLeft="50dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/l_layout1"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:background="@drawable/menu">
-
-
-        <ImageView
-
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_below="@+id/nom"
-            android:src="@drawable/baseline_history_toggle_off_24"
-            android:layout_marginLeft="70dp"
-
-            >
-
-
-        </ImageView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="history"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-/>
-    </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <LinearLayout
-        android:id="@+id/layout_addpark"
-        android:layout_width="300dp"
-        android:layout_marginLeft="50dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/l_layout2"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:background="@drawable/menu"
-        android:visibility="visible"
-        >
-
-
-        <ImageView
-
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_below="@+id/nom"
-            android:src="@drawable/baseline_add_location_alt_24"
-            android:layout_marginLeft="70dp"
-
-            >
-
-
-        </ImageView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ajouter un parking"
-            android:textSize="18sp"
-            android:textColor="@color/white"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"/>
-
-    </LinearLayout>
-
-
-
-
-
-
-
-
-    <LinearLayout
-        android:id="@+id/layout_infoparking"
-        android:layout_width="300dp"
-        android:layout_marginLeft="50dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/layout_addpark"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:background="@drawable/menu"
-        android:visibility="visible"
-        >
-
-
-        <ImageView
-
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_below="@+id/nom"
-            android:src="@drawable/baseline_local_parking_24"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="70dp"
-
-            >
-
-
-        </ImageView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="information de parking"
-            android:textSize="18sp"
-            android:textColor="@color/white"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"/>
-
-    </LinearLayout>
-
-
-
-
-
-
-    <LinearLayout
-        android:id="@+id/l_layout3"
-        android:layout_width="300dp"
-        android:layout_marginLeft="50dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/layout_infoparking"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:background="@drawable/menu">
-
-
-        <ImageView
-
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_below="@+id/nom"
-            android:src="@drawable/baseline_settings_24"
-            android:layout_marginLeft="70dp"
-
-            >
-
-
-        </ImageView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="paramètre"
-            android:textSize="18sp"
-            android:textColor="@color/white"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"/>
-
-    </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <LinearLayout
-        android:id="@+id/l_layout5"
-        android:layout_width="300dp"
-        android:layout_marginLeft="50dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/l_layout3"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:background="@drawable/menu">
-
-
-        <ImageView
-
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_below="@+id/nom"
-            android:src="@drawable/baseline_help_24"
-            android:layout_marginLeft="70dp"
-
-            >
-
-
-        </ImageView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="aide"
-            android:textSize="18sp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/white"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/l_layout4"
-        android:layout_width="300dp"
-        android:layout_marginLeft="50dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/l_layout3"
-        android:layout_marginTop="200dp"
-        android:orientation="horizontal"
-        android:background="@drawable/menu">
-
-
-        <ImageView
-
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_below="@+id/nom"
-            android:src="@drawable/baseline_info_24"
-            android:layout_marginLeft="70dp"
-
-            >
-
-
-        </ImageView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="info"
-            android:textSize="18sp"
-            android:textColor="@color/white"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"/>
-
-    </LinearLayout>
-
-
-
-
-
-</RelativeLayout>
-
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/baseline_arrow_back_24" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgview_blasti"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/blasti_transparent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.505"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.010005" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgview_blasti">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/l_layout1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/background_btn_white"
+                        android:elevation="3dp">
+
+                        <ImageView
+                            android:id="@+id/imageViewProfil"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/baseline_person_saramenu24" />
+
+                        <TextView
+                            android:id="@+id/menuProfil"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:text="Profil"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageViewProfil"
+                            app:layout_constraintStart_toEndOf="@+id/imageViewProfil"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewProfil" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/l_layout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/background_btn_white"
+                        android:elevation="3dp">
+
+                        <ImageView
+                            android:id="@+id/imageViewHistorique"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/baseline_history_saramenu24" />
+
+                        <TextView
+                            android:id="@+id/menuHistorique"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:text="History"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageViewHistorique"
+                            app:layout_constraintStart_toEndOf="@+id/imageViewHistorique"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewHistorique" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_addpark"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:visibility="visible"
+
+                        android:background="@drawable/background_btn_white"
+                        android:elevation="3dp">
+
+                        <ImageView
+                            android:id="@+id/imageViewAddPark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/baseline_add_location_alt_saramenu24" />
+
+                        <TextView
+                            android:id="@+id/menuAddPark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:text="Ajouter un parking"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageViewAddPark"
+                            app:layout_constraintStart_toEndOf="@+id/imageViewAddPark"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewAddPark" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_infoparking"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:visibility="visible"
+                        android:background="@drawable/background_btn_white"
+                        android:elevation="3dp">
+
+                        <ImageView
+                            android:id="@+id/imageViewInfoPark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/baseline_local_parking_saramenu24" />
+
+                        <TextView
+                            android:id="@+id/menuInfoPark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:text="Information de parkings"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageViewInfoPark"
+                            app:layout_constraintStart_toEndOf="@+id/imageViewInfoPark"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewInfoPark" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/l_layout5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/background_btn_white"
+                        android:elevation="3dp">
+
+                        <ImageView
+                            android:id="@+id/imageViewAide"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/baseline_help_saramenu24" />
+
+                        <TextView
+                            android:id="@+id/menuAide"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:text="Aide"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageViewAide"
+                            app:layout_constraintStart_toEndOf="@+id/imageViewAide"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewAide" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/l_layout4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/background_btn_white"
+                        android:elevation="3dp">
+
+                        <ImageView
+                            android:id="@+id/imageViewInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/baseline_info_saramenu24" />
+
+                        <TextView
+                            android:id="@+id/menuInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:text="Info"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageViewInfo"
+                            app:layout_constraintStart_toEndOf="@+id/imageViewInfo"
+                            app:layout_constraintTop_toTopOf="@+id/imageViewInfo" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
